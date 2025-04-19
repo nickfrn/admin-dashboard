@@ -8,9 +8,13 @@
     --violet: #818cf8;
     --red: #f87171;
     --green: #6fd4c0;
+    --orange: #fb923c;
     --icon-size: max(2rem, 30px);
     --propic-size: 4rem;
-    --box-shadow: drop-shadow(7px 7px 0 rgb(0 0 0 / 1));
+    --round-corners: 16px;
+    --round-propic: 50px;
+    --border-style: 3px solid var(--black);
+    --shadow: drop-shadow(7px 7px 0 rgb(0 0 0 / 1));
 }
 
 html, body {
@@ -34,6 +38,7 @@ html, body {
 .propic {
     width: var(--propic-size);
     height: var(--propic-size);
+    border-radius: var(--round-propic);
 }
 
 .propic.big {
@@ -47,6 +52,8 @@ html, body {
     height: 100%;
     box-sizing: border-box;
     flex-shrink: 0;
+    gap: 2rem;
+    padding: 2rem;
 }
 
 .sidebar {
@@ -54,7 +61,6 @@ html, body {
     grid-row: 1 / 3;
     background-color: var(--violet);
     color: var(--black);
-    /* margin: 1.2rem 6rem 0 2.4rem; */
 }
 
 .logo {
@@ -83,7 +89,11 @@ html, body {
     grid-row: 1 / 2;
     display: grid;
     grid-template: 1fr 1fr / 2fr 1fr;
-    background-color: var(--white);
+    background-color: var(--orange);
+    border: var(--border-style);
+    border-radius: var(--round-corners);
+    filter: var(--shadow);
+    padding: 0 1.5rem;
 }
 
 .search {
@@ -91,11 +101,12 @@ html, body {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     align-items: center;
+    gap: 1rem;
 }
 
 .searchbar {
     background-color: var(--white);
-    border-radius: 50px;
+    border-radius: var(--round-propic);
     flex-grow: 1;
     height: 2rem;
     border-color: var(--black);
@@ -108,18 +119,46 @@ html, body {
     grid-row: 1 / 2;
     align-items: center;
     justify-content: end;
+    gap: 1rem;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .greeting {
     display: flex;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.greeting-text > * {
+    margin: 0;
+}
+
+.greeting-text > h1 {
+    font-size: 1.5rem;
 }
 
 .action-nav {
     display: flex;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.action-btn {
+    background-color: var(--white);
+    border: 2px solid black;
+    filter: drop-shadow(3px 3px 0 rgb(0 0 0 / 1));
+    border-radius: 100px;
+    height: 3rem;
+    width: 5rem;
 }
 
 .content {
@@ -127,23 +166,34 @@ html, body {
     grid-row: 2 / 3;
     background-color: var(--red);
     padding: 0 1.5rem;
+    border: var(--border-style);
+    border-radius: var(--round-corners);
+    filter: var(--shadow);
 }
 
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
 .card {
     background-color: var(--white);
     padding: 2rem;
-    border: 3px solid var(--black);
-    filter: var(--box-shadow);
+    border: var(--border-style);
+    border-radius: var(--round-corners);
+    filter: var(--shadow);
 }
 
 .card > * {
     margin: 0;
+}
+
+.card-btns {
+    display: flex;
+    justify-content: end;
+    padding-top: 2rem;
 }
 
 .side-content {
