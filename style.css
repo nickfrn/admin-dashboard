@@ -126,11 +126,24 @@ html, body {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     background-color: var(--red);
+    padding: 0 1.5rem;
 }
 
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 2rem;
+    border: 3px solid var(--black);
+    filter: var(--box-shadow);
+}
+
+.card > * {
+    margin: 0;
 }
 
 .side-content {
